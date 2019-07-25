@@ -138,7 +138,7 @@ Meteor.methods({
 
             let validatorSet = {}
             // get latest validator candidate information
-            url = LCD+'/staking/validators';
+            url = LCD+'/stake/validators';
 
             try{
                 response = HTTP.get(url);
@@ -148,7 +148,7 @@ Meteor.methods({
                 console.log(e);
             }
 
-            url = LCD+'/staking/validators?status=unbonding';
+            url = LCD+'/stake/validators?status=unbonding';
 
             try{
                 response = HTTP.get(url);
@@ -158,7 +158,7 @@ Meteor.methods({
                 console.log(e);
             }
 
-            url = LCD+'/staking/validators?status=unbonded';
+            url = LCD+'/stake/validators?status=unbonded';
 
             try{
                 response = HTTP.get(url);
@@ -437,7 +437,7 @@ Meteor.methods({
 
                                         if (height % 30 == 1){
                                             try{
-                                                let response = HTTP.get(LCD + '/staking/delegators/'+valExist.delegator_address+'/delegations/'+valExist.operator_address);
+                                                let response = HTTP.get(LCD + '/stake/delegators/'+valExist.delegator_address+'/delegations/'+valExist.operator_address);
 
                                                 if (response.statusCode == 200){
                                                     let selfDelegation = JSON.parse(response.content);

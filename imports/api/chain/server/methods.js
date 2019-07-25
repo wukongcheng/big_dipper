@@ -76,7 +76,7 @@ Meteor.methods({
                 chainStates.height = parseInt(status.sync_info.latest_block_height);
                 chainStates.time = new Date(status.sync_info.latest_block_time);
 
-                url = LCD + '/staking/pool';
+                url = LCD + '/stake/pool';
                 try{
                     response = HTTP.get(url);
                     let bonding = JSON.parse(response.content);
@@ -165,15 +165,7 @@ Meteor.methods({
                 auth: genesis.app_state.auth,
                 bank: genesis.app_state.bank,
                 staking: {
-                    pool: genesis.app_state.staking.pool,
-                    params: genesis.app_state.staking.params
-                },
-                mint: genesis.app_state.mint,
-                distr: {
-                    communityTax: genesis.app_state.distr.community_tax,
-                    baseProposerReward: genesis.app_state.distr.base_proposer_reward,
-                    bonusProposerReward: genesis.app_state.distr.bonus_proposer_reward,
-                    withdrawAddrEnabled: genesis.app_state.distr.withdraw_addr_enabled
+                    params: genesis.app_state.stake.params
                 },
                 gov: {
                     startingProposalId: genesis.app_state.gov.starting_proposal_id,
@@ -181,9 +173,6 @@ Meteor.methods({
                     votingParams: genesis.app_state.gov.voting_params,
                     tallyParams: genesis.app_state.gov.tally_params
                 },
-                slashing:{
-                    params: genesis.app_state.slashing.params
-                }
             }
 
             let totalVotingPower = 0;
@@ -239,9 +228,9 @@ Meteor.methods({
 
             // read validators from previous chain
             console.log('read validators from previous chain');
-            if (genesis.app_state.staking.validators && genesis.app_state.staking.validators.length > 0){
-                console.log(genesis.app_state.staking.validators.length);
-                let genValidatorsSet = genesis.app_state.staking.validators;
+            if (genesis.app_state.stake.validators && genesis.app_state.stake.validators.length > 0){
+                console.log(genesis.app_state.stake.validators.length);
+                let genValidatorsSet = genesis.app_state.stake.validators;
                 let genValidators = genesis.validators;
                 for (let v in genValidatorsSet){
                     // console.log(genValidators[v]);
