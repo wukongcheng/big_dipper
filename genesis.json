@@ -1,0 +1,218 @@
+{
+  "genesis_time": "2019-07-24T02:23:39.582357Z",
+  "chain_id": "bdchain-test",
+  "consensus_params": {
+    "block": {
+      "max_bytes": "22020096",
+      "max_gas": "-1",
+      "time_iota_ms": "1000"
+    },
+    "evidence": {
+      "max_age": "100000"
+    },
+    "validator": {
+      "pub_key_types": [
+        "ed25519"
+      ]
+    }
+  },
+  "app_hash": "",
+  "app_state": {
+    "accounts": [
+      {
+        "address": "faa1azr48q0dzlkmzdppkq67t9u887wn82d5f7nsqf",
+        "coins": [
+          "150000000000000000000bdcoin-atto"
+        ],
+        "sequence_number": "0",
+        "account_number": "0"
+      }
+    ],
+    "auth": {
+      "params": {
+        "tx_size": "1000"
+      }
+    },
+    "stake": {
+      "params": {
+        "unbonding_time": "1814400000000000",
+        "max_validators": 100
+      },
+      "last_total_power": "0",
+      "last_validator_powers": null,
+      "validators": null,
+      "exported": false
+    },
+    "gov": {
+      "params": {
+        "critical_deposit_period": "86400000000000",
+        "critical_min_deposit": [
+          {
+            "denom": "bdcoin-atto",
+            "amount": "4000000000000000000000"
+          }
+        ],
+        "critical_voting_period": "120000000000",
+        "critical_max_num": "1",
+        "critical_threshold": "0.8570000000",
+        "critical_veto": "0.3340000000",
+        "critical_participation": "0.8750000000",
+        "critical_penalty": "0.0000000000",
+        "important_deposit_period": "86400000000000",
+        "important_min_deposit": [
+          {
+            "denom": "bdcoin-atto",
+            "amount": "2000000000000000000000"
+          }
+        ],
+        "important_voting_period": "120000000000",
+        "important_max_num": "5",
+        "important_threshold": "0.8000000000",
+        "important_veto": "0.3340000000",
+        "important_participation": "0.8340000000",
+        "important_penalty": "0.0000000000",
+        "normal_deposit_period": "86400000000000",
+        "normal_min_deposit": [
+          {
+            "denom": "bdcoin-atto",
+            "amount": "1000000000000000000000"
+          }
+        ],
+        "normal_voting_period": "120000000000",
+        "normal_max_num": "2",
+        "normal_threshold": "0.6670000000",
+        "normal_veto": "0.3340000000",
+        "normal_participation": "0.7500000000",
+        "normal_penalty": "0.0000000000",
+        "system_halt_period": "60"
+      }
+    },
+    "upgrade": {
+      "GenesisVersion": {
+        "UpgradeInfo": {
+          "ProposalID": "0",
+          "Protocol": {
+            "version": "0",
+            "software": "https://baidu/blockchain/poc-chain/releases/tag/v0.1.0-dev",
+            "height": "1",
+            "threshold": "0.9000000000"
+          }
+        },
+        "Success": true
+      }
+    },
+    "slashing": {
+      "params": {
+        "max_evidence_age": "36",
+        "signed_blocks_window": "20",
+        "min_signed_per_window": "0.5000000000",
+        "double_sign_jail_duration": "600000000000",
+        "downtime_jail_duration": "300000000000",
+        "censorship_jail_duration": "600000000000"
+      },
+      "signing_infos": {},
+      "missed_blocks": {}
+    },
+    "service": {
+      "privateOrg": "",
+      "params": {
+        "max_request_timeout": "100",
+        "complaint_retrospect": "1296000000000000",
+        "arbitration_time_limit": "432000000000000",
+        "tx_size_limit": "4000"
+      }
+    },
+    "record": {
+      "privateOrg": ""
+    },
+    "guardian": {
+      "profilers": [
+        {
+          "description": "genesis",
+          "type": "Genesis",
+          "address": "faa1azr48q0dzlkmzdppkq67t9u887wn82d5f7nsqf",
+          "added_by": "faa1azr48q0dzlkmzdppkq67t9u887wn82d5f7nsqf",
+          "role": {
+            "name": "",
+            "groups": null
+          },
+          "auth": null
+        }
+      ],
+      "trustees": null,
+      "whitelistnodes": [
+        {
+          "pubkey": "70ebc5144a70ce0e3b9c9a1cce59f72a9589479a",
+          "auth": null
+        }
+      ],
+      "organizations": [
+        {
+          "orgname": "org-from-genesis",
+          "validators": [
+            "fca13x886ylv3nl7dsw6j93e2zsfcdsks0tu03gfnv"
+          ],
+          "members": [
+            {
+              "node_id": "70ebc5144a70ce0e3b9c9a1cce59f72a9589479a",
+              "node_pk": "30818902818100c1aed3b751472ec6a69aef63600cd4aaa8771aabd15d730ab035a37bafe3b071f32d31ba068eb6c642f2f98f9c384dc735f3be938e37cf988db024750bca739a5f842cb03a53dcd69d81c26536e785c6b1a106ad88be135360b6f230e66c816f350bff8a6b7b6f5cae21d6df57ce8c1623173cbe4243ccce0d5f853bbbd9468d0203010001"
+            }
+          ]
+        }
+      ]
+    },
+    "gentxs": [
+      {
+        "type": "bdchain/bank/StdTx",
+        "value": {
+          "msg": [
+            {
+              "type": "bdchain/stake/MsgCreateValidator",
+              "value": {
+                "Description": {
+                  "moniker": "node0",
+                  "identity": "",
+                  "website": "",
+                  "details": "",
+                  "org": "org-from-genesis"
+                },
+                "validator_address": "fva1azr48q0dzlkmzdppkq67t9u887wn82d5u0elaw",
+                "pubkey": {
+                  "type": "tendermint/PubKeyEd25519",
+                  "value": "5y8VLVkoGGoF6nYV+PnMSQqzsbO4eFVky1f5INH1NeI="
+                }
+              }
+            }
+          ],
+          "fee": {
+            "amount": null,
+            "gas": "0"
+          },
+          "signatures": [
+            {
+              "pub_key": {
+                "type": "tendermint/PubKeySecp256k1",
+                "value": "AsCpluFw6Wt/IcGB0P8EvemZelQ/5zFUFgjxmkVy/yTf"
+              },
+              "signature": "dX5GwDtFWGjlfiecgtjrv13As2BPB/i09EUEejG9ZGktlnznF5h43FaJzqkyiFBH5pHIJ03san3eLjG4hA+OOw==",
+              "account_number": "0",
+              "sequence": "0"
+            }
+          ],
+          "memo": "70ebc5144a70ce0e3b9c9a1cce59f72a9589479a@0.0.0.0:26656",
+          "privateOrg": "",
+          "offchain": false
+        }
+      }
+    ],
+    "contract": {
+      "params": {
+        "tx_size_limit": "15000",
+        "call_stack_max_depth": "0",
+        "data_stack_initial_capacity": "1024",
+        "data_stack_max_depth": "0",
+        "Is_EVMDebug": false
+      }
+    }
+  }
+}
